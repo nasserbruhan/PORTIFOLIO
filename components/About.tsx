@@ -3,6 +3,9 @@ import { User, GraduationCap, Briefcase, MapPin, Globe } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 const About: React.FC = () => {
+  // User provided GitHub link transformed for raw image access
+  const profileImageUrl = "https://github.com/nasserbruhan/PORTIFOLIO/blob/main/e93b9936-6da2-47cd-8ee6-2cd0d5536d93%20(1).jpg?raw=true";
+
   return (
     <section id="about" className="py-24 bg-slate-50 dark:bg-slate-900/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,11 +19,11 @@ const About: React.FC = () => {
               <div className="aspect-[4/5] sm:aspect-square bg-slate-200 dark:bg-slate-800 rounded-[2rem] overflow-hidden relative shadow-inner">
                 {/* Profile Image */}
                 <img 
-                  src="profile.jpg" 
+                  src={profileImageUrl} 
                   alt="Ntege Nasser Bruhan" 
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:rotate-1 group-hover:animate-profile-pulse"
                   onError={(e) => {
-                    // Fallback to a high-quality representative placeholder if file is missing
+                    // Fallback to a high-quality representative placeholder if file is missing or blocked
                     (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=800&auto=format&fit=crop";
                   }}
                 />
